@@ -36,7 +36,7 @@ def main(input_filepaths, output_filepaths):
     X_train = pd.get_dummies(X_train)
 
     X_test =(pd.get_dummies(X_test)
-        .reindex(columns = train_df.columns, fill_value=0)
+        .reindex(columns = X_train.columns, fill_value=0)
     )
 
 
