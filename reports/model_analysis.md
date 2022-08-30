@@ -45,4 +45,33 @@ other metrics obtained are:
 * **Train ROC AUC** : 0.803
 * **Test ROC AUC** :  0.793
 
+## Model interpretability
+
+LightGBMs as ensambles of trees are black boxes algorithms, so in order to know whats happening inside them, we can see which features bring more information to de decisions of the trees, and that can be seen via the feature importance
+![image](https://github.com/nelson-io/citi-documentation-test/raw/main/reports/figures/model_feature_importance.jpg)
+
+
+We can see that Age, capital gain, years of education, capital loss and hours worked per week are the most important ones which totally makes sense.
+
+#### SHAP
+
+Sometimes feature importances are not enough, so there are more complex techniques that can bring a lot of information about a complex model, for example SHAP values.
+
+They represent, for each observation, how much each feature contributes to model output prediction
+
+This comes really handy since they bring new light to information that couldn't be seen in any other way
+
+![image](https://github.com/nelson-io/citi-documentation-test/raw/main/reports/figures/model_shap_bs.jpg)
+
+With SHAPS we can see not only the impact of each variable, but also the role they got in the model.
+
+In the plot above, each dot represents an original observation, so more density means more observations. the dots at the left represent a high negative impact, the ones at the right high positive impact and the ones at the middle doesn't bring much information. At the same time, the color represents high values associated with red and low values with blue, so we can interpret the plot this way:
+
+When marital status is married (high value of the feature) there's a positive impact, that means, that its associated with high income, while low values are associated with low income.
+
+This same way we can see that older age is associated with high income while younger age with lower income
+
+And also with Sex. Woman tend to have lower income than men.
+
+
 
