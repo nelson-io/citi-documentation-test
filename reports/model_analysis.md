@@ -6,20 +6,20 @@ This model attempts to solve the classification problem of detecting individuals
 ## Data pre-processing
 Data was available in csv format without headers. Headers were added and data was stored into a train set and a test set, both in parquet format [here](https://github.com/nelson-io/citi-documentation-test/tree/main/data/interim).
 
-The data had missing values that where expressed with a string ("?") and were replaced into python numpy's class that can be handled by the machine learning framework used.
+The data had missing values that were expressed with a string ("?") and were replaced into python numpy's class that can be handled by the machine learning framework used.
 
-The feature that expressed the weight of every combination into the census was removed for methodological reasons since it didn't clearly represent information from the original census and it was an estimate added afterwards.
+The feature that expressed the weight of every combination into the census was removed for methodological reasons since it didn't represent information from the original census and it was an estimate added afterwards.
 
 Numerical data was scaled and categorical data one-hot-encoded in order to be able to use any kind of Machine Learning framework.
 
-All the transformations were fitted with the train set prior to be applyed to the test set in order to avoid data leakage.
+All the transformations were fitted with the train set prior to be applied to the test set in order to avoid data leakage.
 
 The clean data, ready to be used in any model was stored in [data/processed](https://github.com/nelson-io/citi-documentation-test/tree/main/data/processed).
 
 
 ## Model selection
 
-For practical reasons, instead of trying multiple models and make them compete, LightGBM was selected since it's usually performant and efficient.
+For practical reasons, instead of trying multiple models and making them compete, LightGBM was selected since it's usually performant and efficient.
 
 Model was optimized with Optuna and the optimization results can be accessed in [reports/model_optimization](https://github.com/nelson-io/citi-documentation-test/blob/main/reports/model_optimization.md).
 
@@ -29,7 +29,7 @@ The model params were optimized in order to maximize the accuracy and after test
 * **Train Accuracy** : 0.880
 * **Test Accuracy** :  0.875
 
-Which suggest no overfitting. Since the target was unbalanced, it might make sense to carry on the optimization using an objective function with a metric more resiliant to unbalanced designs or treatign the data beforehand with under sampling or oversamplig techniques.
+Which suggests no overfitting. Since the target was unbalanced, it might make sense to carry on the optimization using an objective function with a metric more resilient to unbalanced designs or treating the data beforehand with under-sampling or over-sampling techniques.
 
 The confusion Matrix shows 2453 true positives and 11787 true negatives with only 1393 false negatives and 648 false positives:
 ```
@@ -47,7 +47,7 @@ other metrics obtained are:
 
 ## Model interpretability
 
-LightGBMs as ensambles of trees are black boxes algorithms, so in order to know whats happening inside them, we can see which features bring more information to de decisions of the trees, and that can be seen via the feature importance
+LightGBMs as ensembles of trees are black box algorithms, so in order to know what's happening inside them, we can see which features bring more information to de decisions of the trees, and that can be seen via the feature importance
 ![image](https://github.com/nelson-io/citi-documentation-test/raw/main/reports/figures/model_feature_importance.jpg)
 
 
@@ -65,13 +65,13 @@ This comes really handy since they bring new light to information that couldn't 
 
 With SHAPS we can see not only the impact of each variable, but also the role they got in the model.
 
-In the plot above, each dot represents an original observation, so more density means more observations. the dots at the left represent a high negative impact, the ones at the right high positive impact and the ones at the middle doesn't bring much information. At the same time, the color represents high values associated with red and low values with blue, so we can interpret the plot this way:
+In the plot above, each dot represents an original observation, so more density means more observations. The dots at the left represent a high negative impact, the ones at the right have a high positive impact and the ones at the middle don't bring much information. At the same time, the color represents high values associated with red and low values with blue, so we can interpret the plot this way:
 
-When marital status is married (high value of the feature) there's a positive impact, that means, that its associated with high income, while low values are associated with low income.
+When marital status is married (high value of the feature) there's a positive impact, that means, that it's associated with high income, while low values are associated with low income.
 
 This same way we can see that older age is associated with high income while younger age with lower income
 
-And also with Sex. Woman tend to have lower income than men.
+And also with Sex. Women tend to have lower income than men.
 
 
 
