@@ -84,7 +84,7 @@ There are 2 reports made from the development and model results:
 
 * [Model Analysis](): It focuses on the understanding of the model,performance measurements and the impact of every feature.
 
-* [Model Optimization](): It focuses on the hyperparameter optimization of the model in order to achive performing results. 
+* [Model Optimization](): It focuses on the hyperparameter optimization of the model in order to achieve performing results. 
 
 
 
