@@ -59,7 +59,7 @@ Project Organization
     │                         generated with `pip freeze > requirements.txt`
     │
     ├── setup.py           <- makes project pip installable (pip install -e .) so src can be imported
-    ├── src                <- Source code for use in this project.
+    └── src                <- Source code for use in this project.
         ├── __init__.py    <- Makes src a Python module
         │
         ├── data           <- Scripts to download or generate data
@@ -77,5 +77,16 @@ Project Organization
 
 
 --------
+
+## [Reports](https://github.com/nelson-io/citi-documentation-test/tree/main/reports)
+
+There are 2 reports made from the development and model results:
+
+* [Model Analysis](): It focuses on the understanding of the model,performance measurements and the impact of every feature.
+
+* [Model Optimization](): It focuses on the hyperparameter optimization of the model in order to achive performing results. 
+
+
+
 
 <p><small>Project based on the <a target="_blank" href="https://drivendata.github.io/cookiecutter-data-science/">cookiecutter data science project template</a>. #cookiecutterdatascience</small></p>
