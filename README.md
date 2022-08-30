@@ -82,7 +82,7 @@ Project Organization
 
 There are 2 reports made from the development and model results:
 
-* [Model Analysis](): It focuses on the understanding of the model,performance measurements and the impact of every feature.
+* [Model Analysis](https://github.com/nelson-io/citi-documentation-test/blob/main/reports/model_analysis.md): It focuses on the understanding of the model,performance measurements and the impact of every feature.
 
 * [Model Optimization](https://github.com/nelson-io/citi-documentation-test/blob/main/reports/model_optimization.md): It focuses on the hyperparameter optimization of the model in order to achieve performing results. 
 

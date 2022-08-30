@@ -29,5 +29,20 @@ The model params were optimized in order to maximize the accuracy and after test
 * **Train Accuracy** : 0.880
 * **Test Accuracy** :  0.875
 
-Which suggest no overfitting. Since the target was unbalanced, it might make sense to carry on the optimization using an objective function with a metric more resiliant to unbalanced designs or treatign the data beforehand with under samplig or oversamplig techniques.
+Which suggest no overfitting. Since the target was unbalanced, it might make sense to carry on the optimization using an objective function with a metric more resiliant to unbalanced designs or treatign the data beforehand with under sampling or oversamplig techniques.
+
+The confusion Matrix shows 2453 true positives and 11787 true negatives with only 1393 false negatives and 648 false positives:
+```
+array([[ 2453,  1393],
+       [  648, 11787]])
+```
+
+other metrics obtained are:
+
+* **Train F1 score** : 0.726
+* **Test F1 score** :  0.706
+
+* **Train ROC AUC** : 0.803
+* **Test ROC AUC** :  0.793
+
 
