@@ -25,7 +25,7 @@ def main(input_filepaths, output_filepaths):
     y_train = pd.DataFrame({"target":[1 if val == " >50K" else 0 for val in train_df.income]})
 
     X_test = test_df.drop(['income'],axis=1)
-    y_test = pd.DataFrame({"target":[1 if val == " >50K" else 0 for val in test_df.income]})
+    y_test = pd.DataFrame({"target":[1 if val == " >50K." else 0 for val in test_df.income]})
     # set numerical an categorical columns
 
     numericalcols = list(train_df.select_dtypes(exclude='object').columns)
