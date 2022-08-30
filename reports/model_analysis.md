@@ -47,31 +47,29 @@ other metrics obtained are:
 
 ## Model interpretability
 
-LightGBMs as ensembles of trees are black box algorithms, so in order to know what's happening inside them, we can see which features bring more information to de decisions of the trees, and that can be seen via the feature importance
+LightGBMs as ensembles of trees are black box algorithms, so in order to know what's happening inside them, we must see which features contribute more information to the decisions of the trees, and that can be seen via the feature importance
 ![image](https://github.com/nelson-io/citi-documentation-test/raw/main/reports/figures/model_feature_importance.jpg)
 
 
-We can see that Age, capital gain, years of education, capital loss and hours worked per week are the most important ones which totally makes sense.
+We can see that Age, capital gain, years of education, capital loss and hours worked per week are the most important ones which is consistent with business logic. 
 
 #### SHAP
 
-Sometimes feature importances are not enough, so there are more complex techniques that can bring a lot of information about a complex model, for example SHAP values.
+In cases where feature importances are not enough, more complex techniques can be used to bring the information needed from a complex model, for example SHAP values.
+the weight each feature contributes to the model output prediction, enlightening data that was previously obscure.
 
-They represent, for each observation, how much each feature contributes to model output prediction
-
-This comes really handy since they bring new light to information that couldn't be seen in any other way
 
 ![image](https://github.com/nelson-io/citi-documentation-test/raw/main/reports/figures/model_shap_bs.jpg)
 
-With SHAPS we can see not only the impact of each variable, but also the role they got in the model.
+With SHAPS we are able to see the impact of each variable, and furthermore, the role they got in the model.
 
-In the plot above, each dot represents an original observation, so more density means more observations. The dots at the left represent a high negative impact, the ones at the right have a high positive impact and the ones at the middle don't bring much information. At the same time, the color represents high values associated with red and low values with blue, so we can interpret the plot this way:
+In the plot above, each dot represents an original observation, so denser areas represent more observations. The dots at the left represent a high negative impact, the ones at the right have a high positive impact and the ones at the middle don't  provide relevant information. At the same time, the color represents high values associated with red and low values with blue, so we can interpret the plot this way:
 
-When marital status is married (high value of the feature) there's a positive impact, that means, that it's associated with high income, while low values are associated with low income.
+When marital status is married (high value of the feature) there's a positive impact associated with high income, while low values are associated with low income.
 
-This same way we can see that older age is associated with high income while younger age with lower income
+Likewise, we can see that older age is associated with high income while younger age with lower income
 
-And also with Sex. Women tend to have lower income than men.
+
 
 
 
